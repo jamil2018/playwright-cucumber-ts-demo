@@ -13,6 +13,7 @@
     "@cucumber/cucumber": "^10.0.1",
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.8.10",
+    "prettier": "^3.0.3",
     "ts-node": "^10.9.1"
   }
 }
