@@ -5,7 +5,7 @@
       "snippetInterface": "async-await"
     },
     "dryRun": false,
-    "require": ["src/test/steps/**/*.step.ts"],
+    "require": ["src/test/steps/**/*.step.ts", "src/support/**/*.support.ts"],
     "requireModule": ["ts-node/register"]
   }
 }

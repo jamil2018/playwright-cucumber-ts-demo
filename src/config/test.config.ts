@@ -14,7 +14,7 @@ export const baseConfig = {
   },
 }
 
-export const createBrowserContext = async (): Promise<Browser> => {
+const createBrowserContext = async (): Promise<Browser> => {
   switch (baseConfig.browser) {
     case Browsers.CHROMIUM:
       return chromium.launch(baseConfig.browserOptions)
@@ -27,8 +27,16 @@ export const createBrowserContext = async (): Promise<Browser> => {
   }
 }
 
-export const createPageContext = async (): Promise<Page> => {
+const createPageContext = async (browser: Browser): Promise<Page> => {
+  return browser.newPage()
+}
+
+export const getBrowserAndPageContext = async () => {
   const browser = await createBrowserContext()
-  const page = await browser.newPage()
-  return page
+  const page = await createPageContext(browser)
+
+  return {
+    browser,
+    page,
+  }
 }
