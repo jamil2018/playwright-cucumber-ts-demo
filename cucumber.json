@@ -4,7 +4,7 @@
     "formatOptions": {
       "snippetInterface": "async-await"
     },
-    "dryRun": true,
+    "dryRun": false,
     "require": ["src/test/steps/**/*.step.ts"],
     "requireModule": ["ts-node/register"]
   }

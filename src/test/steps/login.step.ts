@@ -1,12 +1,16 @@
 import { Given, When, Then } from '@cucumber/cucumber'
-import { chromium, Page, Browser } from '@playwright/test'
+import { Browser, Page } from '@playwright/test'
+import {
+  createBrowserContext,
+  createPageContext,
+} from '../../config/test.config'
 
-let browser: Browser
 let page: Page
+let browser: Browser
 
 Given('User navigates to the login page', async function () {
-  browser = await chromium.launch({ headless: false })
-  page = await browser.newPage()
+  page = await createPageContext()
+  browser = await createBrowserContext()
   await page.goto('https://www.saucedemo.com/')
 })
 
