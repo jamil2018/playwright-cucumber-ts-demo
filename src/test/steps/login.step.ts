@@ -4,38 +4,31 @@ Given('User navigates to the application', async function () {
   console.log('implementation done')
 })
 
-Given('User click on the login link', () => {
+Given('User click on the login link', async function () {
   console.log('implementation pending')
 })
 
-Given('User enters the username {string}', (s: string) => {
-  console.log('implementation pending')
+Given('User enters the username {string}', async function (s: string) {
+  console.log('implementation pending', s)
 })
 
-When('Login should be unsuccessful', () => {
+When('Login should be unsuccessful', async function () {
   // Write code here that turns the phrase above into concrete actions
 })
 
-When('User clicks on the login button', () => {
+When('User clicks on the login button', async function () {
   // Write code here that turns the phrase above into concrete actions
 })
 
-Given('User enters the password {string}', (s: string) => {
+Given('User enters the password {string}', function (s: string) {
+  // Write code here that turns the phrase above into concrete actions
+  console.log('implementation pending', s)
+})
+
+Then('Login should be successful', async function () {
   // Write code here that turns the phrase above into concrete actions
 })
 
-Then('Login should be successful', () => {
-  // Write code here that turns the phrase above into concrete actions
-})
-
-When('User clicks on the login button', () => {
-  // Write code here that turns the phrase above into concrete actions
-})
-
-Given('User enters the password as {string}', (s: string) => {
-  // Write code here that turns the phrase above into concrete actions
-})
-
-Given('User enters the username as {string}', (s: string) => {
+When('User clicks on the login button', function () {
   // Write code here that turns the phrase above into concrete actions
 })
