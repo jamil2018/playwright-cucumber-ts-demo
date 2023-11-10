@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js test"
+    "test": "cucumber-js test && ts-node src/utils/reporter.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +19,8 @@
     "eslint-plugin-cucumber": "^2.0.0",
     "prettier": "^3.0.3",
     "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "multiple-cucumber-html-reporter": "^3.5.0"
   }
 }
