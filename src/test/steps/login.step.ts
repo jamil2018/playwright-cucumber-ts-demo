@@ -1,25 +1,28 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Given, When, Then } from '@cucumber/cucumber'
+import login from '../pages/login.page'
+import home from '../pages/home.page'
+import base from '../actions/base.action'
+
+const basePage = new base(global.page)
 
 Given('User navigates to the login page', async function () {
-  await global.page.goto('https://www.saucedemo.com/')
+  await global.page.goto(login.pageURL)
 })
 
-Given('User types the username as {string}', async function (userName) {
-  await global.page.locator('#user-name').fill(userName)
+Given('User types the correct username', async function () {
+  await basePage.typeInTextField(login.userNameFieldSelector, login.userName)
 })
 
-Given('User types the password as {string}', async function (password) {
-  await global.page.locator('#password').fill(password)
+Given('User types the correct password', async function () {
+  await basePage.typeInTextField(login.passwordFieldSelector, login.password)
 })
 
 When('User clicks the login button', async function () {
-  await global.page.locator('#login-button').click()
+  await basePage.clickOnElement(login.loginButtonSelector)
 })
 
-Then('Login should be successful', async function () {
-  const loginValidationText = await global.page
-    .locator('.app_logo')
-    .textContent()
-  console.log('Text: ' + loginValidationText + ' observed. Login Successful!')
+Then('Header text observed', async function () {
+  await basePage.validateTextInElement(home.headerTextSelector, home.headerText)
+  console.log('Text: ' + home.headerText + ' observed. Login Successful!')
 })

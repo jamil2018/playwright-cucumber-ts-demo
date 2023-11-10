@@ -5,7 +5,7 @@ export enum Browsers {
 }
 
 export const config = {
-  baseURL: 'https://https://www.saucedemo.com/',
+  baseURL: 'https://www.saucedemo.com/',
   browserOptions: {
     headless: false,
   },

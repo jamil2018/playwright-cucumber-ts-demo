@@ -4,7 +4,7 @@ Feature: Verify the user authentication
     Given User navigates to the login page
 
   Scenario: User should be able to log in successfully
-    Given User types the username as "standard_user"
-    And User types the password as "secret_sauce"
+    Given User types the correct username
+    And User types the correct password
     When User clicks the login button
-    Then Login should be successful
+    Then Header text observed
