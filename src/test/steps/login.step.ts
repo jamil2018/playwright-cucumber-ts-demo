@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Given, When, Then } from '@cucumber/cucumber'
+import { Given, Then } from '@cucumber/cucumber'
 import login from '../pages/login.page'
 import home from '../pages/home.page'
 import base from '../actions/base.action'
 import { config } from '../../config/test.config'
-let user = require('../fixtures/test_data.json');
+import user from '../fixtures/test_data.json'
 const basePage = new base(global.page)
 
 Given('User logged in to the page', async function () {
